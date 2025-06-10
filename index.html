@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Sampler</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Chroma.js will be available globally -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "chroma-js": ":"https://cdn.jsdelivr.net/npm/chroma-js@2.4.2/dist/chroma-js.mi.js"
+            }
+        }
+    </script>
     <script type="module" src="script.js"></script>
 </head>
 <body>

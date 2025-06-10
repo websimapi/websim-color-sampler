@@ -223,12 +223,7 @@ function rgbToHex(r, g, b) {
 }
 
 function rgbToHsl(r, g, b) {
-    // Using chroma.js (now available globally) for reliable conversion
-    // Check if chroma is available
-    if (typeof chroma === 'undefined') {
-        console.error('chroma.js is not loaded.');
-        return `rgb(${r}, ${g}, ${b})`; // Return RGB if conversion fails
-    }
+    // Using chroma.js for reliable conversion
     const hsl = chroma(r, g, b).hsl();
     const h = isNaN(hsl[0]) ? 0 : Math.round(hsl[0]); // Handle grayscale (hue is NaN)
     const s = Math.round(hsl[1] * 100);
@@ -341,7 +336,7 @@ function loadPalette() {
             console.log('Palette loaded:', palette);
         } else {
             console.log('No palette found in local storage.');
-            // alert('No saved palette found.'); // Removed potentially annoying alert on load
+            alert('No saved palette found.');
         }
     } catch (e) {
         console.error('Error loading palette from local storage:', e);
